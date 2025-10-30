@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 function formatMoney(n: number) {
   return n.toLocaleString(undefined, { maximumFractionDigits: 2, minimumFractionDigits: 2 });
@@ -23,15 +23,15 @@ export default function App() {
   const [winPct, setWinPct] = useState(55);
   const [rewardR, setRewardR] = useState(2);
   const [lossR, setLossR] = useState(1);
-  const [bankroll, setBankroll] = useState(1000);
+  const [bankroll] = useState(1000);
   const [equity, setEquity] = useState(1000);
   const [riskPct, setRiskPct] = useState(2);
   const [speedMs, setSpeedMs] = useState(250);
   const [auto, setAuto] = useState(false);
   const [tradeCount, setTradeCount] = useState(0);
   const [wins, setWins] = useState(0);
-  const [losses, setLosses] = useState(0);
-  const [peak, setPeak] = useState(1000);
+  const [, setLosses] = useState(0);
+  const [, setPeak] = useState(1000);
   const [maxDD, setMaxDD] = useState(0);
   const [lastOutcome, setLastOutcome] = useState<{R:number;pnl:number} | null>(null);
   const [eqHist, setEqHist] = useState<number[]>([1000]);
